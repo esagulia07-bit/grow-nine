@@ -92,6 +92,73 @@
     </section>
   </main>
 
+// ============================
+// === FITUR TESTIMONI GROWNINE ===
+// ============================
+
+// Elemen testimoni dan tombol
+const container = document.getElementById("testimoni-container");
+const submitBtn = document.getElementById("submitTestimoni");
+
+// Testimoni default
+const testimoniDefault = [
+  { nama: "Sarah Aulia", pesan: "Makasih ya Grow Nine, kualitas bibitnya bagus, bisa beli lewat online juga, pokoknya jos!" },
+  { nama: "Rakha Maheswara", pesan: "Bintang 5 pokoknya untuk GrowNine!" }
+];
+
+// Saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function() {
+  let savedTestimoni = JSON.parse(localStorage.getItem("testimoniList"));
+
+  // Kalau belum ada di localStorage, simpan testimoni default
+  if (!savedTestimoni || savedTestimoni.length === 0) {
+    localStorage.setItem("testimoniList", JSON.stringify(testimoniDefault));
+    savedTestimoni = testimoniDefault;
+  }
+
+  // Tampilkan semua testimoni
+  savedTestimoni.forEach(t => {
+    tambahTestimoniKeHalaman(t.nama, t.pesan);
+  });
+});
+
+// Tombol kirim testimoni baru
+if (submitBtn) {
+  submitBtn.addEventListener("click", function() {
+    const nama = document.getElementById("nama").value.trim();
+    const pesan = document.getElementById("pesan").value.trim();
+
+    if (nama === "" || pesan === "") {
+      alert("Isi nama dan pesan terlebih dahulu!");
+      return;
+    }
+
+    tambahTestimoniKeHalaman(nama, pesan);
+    simpanTestimoni(nama, pesan);
+
+    document.getElementById("nama").value = "";
+    document.getElementById("pesan").value = "";
+
+    alert("Terima kasih atas testimoninya!");
+  });
+}
+
+// Fungsi menambah ke halaman
+function tambahTestimoniKeHalaman(nama, pesan) {
+  const card = document.createElement("div");
+  card.className = "testimoni-card";
+  card.innerHTML = <p>"${pesan}"</p><h4>— ${nama}</h4>;
+  container.appendChild(card);
+}
+
+// Fungsi simpan ke localStorage
+function simpanTestimoni(nama, pesan) {
+  const testimoniBaru = { nama, pesan };
+  const testimoniList = JSON.parse(localStorage.getItem("testimoniList")) || [];
+  testimoniList.push(testimoniBaru);
+  localStorage.setItem("testimoniList", JSON.stringify(testimoniList));
+}
+  
   <footer>
     <p>&copy; 2025 GrowNine Persemaian</p>
   </footer>
