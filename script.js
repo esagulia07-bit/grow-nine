@@ -2,28 +2,28 @@
 const produkList = [
   {
     nama: "Falcataria moluccana",
-    harga: 208913,
+    harga: 9000,
     stok: 150,
     deskripsi: "Pohon cepat tumbuh, cocok untuk penghijauan dan produksi kayu ringan.",
     gambar: "falcataria.jpg"
   },
   {
     nama: "Swietenia macrophylla",
-    harga: 208913,
+    harga: 12000,
     stok: 150,
     deskripsi: "Pohon mahoni, kayu keras berkualitas tinggi untuk konstruksi dan mebel.",
     gambar: "swietenia.jpg"
   },
   {
     nama: "Gmelina arborea",
-    harga: 208913,
+    harga: 15000,
     stok: 150,
     deskripsi: "Kayu serbaguna, pertumbuhan cepat, cocok untuk industri dan penghijauan.",
     gambar: "gmelina.jpg"
   },
   {
     nama: "Shorea leprosula",
-    harga: 208913,
+    harga: 35000,
     stok: 150,
     deskripsi: "Meranti merah, kayu komersial unggul, sering digunakan untuk reboisasi.",
     gambar: "shorea.jpg"
