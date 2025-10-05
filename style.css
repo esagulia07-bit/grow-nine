@@ -193,56 +193,55 @@ footer {
   }
 }
 
-/* === Partnership Section === */
+/* === PARTNERSHIP SECTION === */
 #partnership {
   text-align: center;
-  padding: 40px 0;
-  background-color: #f4f4f4;
-  border-top: 2px solid #ccc;
-  margin-top: 40px;
+  padding: 50px 20px;
+  background-color: #f9faf9;
+  border-top: 2px solid #dceadc;
 }
 
 #partnership h2 {
-  font-size: 24px;
-  color: #2c3e50;
+  font-size: 28px;
   margin-bottom: 10px;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 #partnership p {
-  font-size: 16px;
   color: #555;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
+  font-size: 16px;
 }
 
-#partnership ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px; /* jarak antar logo */
+  margin-top: 20px;
 }
 
-#partnership li {
-  display: inline-block;
-  margin: 10px 20px;
-  text-align: center;
-  vertical-align: top;
-}
-
-#partnership img {
+.partner-logos img {
   width: 100px;
   height: auto;
-  display: block;
-  margin: 0 auto 8px auto;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#partnership img:hover {
+.partner-logos img:hover {
   transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-#partnership span {
-  display: block;
-  font-size: 14px;
-  color: #333;
+.partner-caption {
+  margin-top: 20px;
+  color: #2c3e50;
+  font-size: 15px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 #testimoni {
