@@ -256,12 +256,11 @@ renderProduk();
 renderCart();
 hideAdminPanel();
 
-// === Tambahkan di bagian akhir file script.js ===
-
+// === Partnership Section ===
 const partnershipSection = document.createElement("section");
 partnershipSection.id = "partnership";
 
-// Judul
+// Judul section
 const title = document.createElement("h2");
 title.textContent = "Partnership";
 
@@ -269,45 +268,38 @@ title.textContent = "Partnership";
 const desc = document.createElement("p");
 desc.textContent = "Persemaian ini dikembangkan melalui kerja sama:";
 
-// Daftar partner
-const list = document.createElement("ul");
+// Container logo
+const container = document.createElement("div");
+container.classList.add("partner-logos");
+
+// Data partner (nama + logo)
 const partners = [
-  {
-    name: "Program Studi Rekayasa Kehutanan - ITB",
-    logo: "itb.png"
-  },
-  {
-    name: "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)",
-    logo: "klhk.png"
-  },
-  {
-    name: "Perum Perhutani",
-    logo: "perhutani.png"
-  }
+  { name: "Program Studi Rekayasa Kehutanan - ITB", logo: "itb.png" },
+  { name: "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)", logo: "klhk.png" },
+  { name: "Perum Perhutani", logo: "perhutani.png" }
 ];
 
+// Tambahkan setiap partner ke container
 partners.forEach(partner => {
-  const li = document.createElement("li");
+  const div = document.createElement("div");
+  div.classList.add("partner-item");
+
   const img = document.createElement("img");
   img.src = partner.logo;
   img.alt = partner.name;
-  img.style.width = "100px";
-  img.style.height = "auto";
-  img.style.display = "block";
-  img.style.marginBottom = "5px";
 
-  const name = document.createElement("span");
-  name.textContent = partner.name;
+  const p = document.createElement("p");
+  p.textContent = partner.name;
 
-  li.appendChild(img);
-  li.appendChild(name);
-  list.appendChild(li);
+  div.appendChild(img);
+  div.appendChild(p);
+  container.appendChild(div);
 });
 
 // Gabungkan elemen
 partnershipSection.appendChild(title);
 partnershipSection.appendChild(desc);
-partnershipSection.appendChild(list);
+partnershipSection.appendChild(container);
 
 // Tambahkan ke akhir body
 document.body.appendChild(partnershipSection);
