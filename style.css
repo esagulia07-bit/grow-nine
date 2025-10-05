@@ -1,0 +1,194 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f2f9f2;
+  margin: 0;
+  padding: 0;
+  color: #224422;
+}
+
+header.hero {
+  background: linear-gradient(180deg, #378a5d 60%, #b0e3b8 100%);
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+.hero-img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  opacity: 0.8;
+}
+.hero-content {
+  position: absolute;
+  left: 0; right: 0; top: 30px;
+}
+.motto {
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 6px 24px rgba(34,68,34,0.07);
+}
+h2 {
+  color: #2a7038;
+  margin-top: 1.5rem;
+}
+#produk .produk-card {
+  background: #e7f8eb;
+  border: 1px solid #b0e3b8;
+  border-radius: 8px;
+  margin: 1rem 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+#produk .produk-card .produk-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#produk .produk-card img {
+  width: 70px; height: 70px; object-fit: cover; border-radius: 6px; border: 1px solid #b0e3b8;
+  background: #ddeedd;
+}
+#produk .produk-card .produk-info {
+  flex: 1;
+}
+#produk .produk-card .harga {
+  font-weight: bold;
+  color: #347c3c;
+}
+#produk .produk-card .stok {
+  font-size: 0.95rem;
+  color: #555;
+}
+#produk .produk-card button {
+  background: #2a7038;
+  color: #fff;
+  border: none;
+  padding: .5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+#produk .produk-card button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+#keranjang {
+  border-top: 1px solid #b0e3b8;
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+#cart-list {
+  margin-bottom: 1rem;
+}
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  max-width: 350px;
+}
+#checkout-form input, #checkout-form textarea {
+  border: 1px solid #b0e3b8;
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: 1rem;
+}
+#checkout-form button {
+  background: #378a5d;
+  color: #fff;
+  border: none;
+  padding: .5rem 0;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#checkout-message {
+  color: #2a7038;
+  font-weight: bold;
+  margin-top: .7rem;
+}
+#admin-login, #admin-panel {
+  margin-top: 2.5rem;
+  border-top: 1px solid #b0e3b8;
+  padding-top: 1.2rem;
+}
+#login-form {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+#login-form input {
+  border: 1px solid #b0e3b8;
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: 1rem;
+}
+#login-form button {
+  background: #347c3c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#login-message {
+  margin-top: .5rem;
+  color: #d14343;
+}
+#admin-panel h3 {
+  margin-top: 1.2rem;
+}
+#update-stok, #quality-control {
+  margin-top: .5rem;
+  margin-bottom: 1.2rem;
+}
+#update-stok input[type="number"], #quality-control input[type="number"] {
+  width: 60px;
+  padding: .3rem;
+  border-radius: 3px;
+  border: 1px solid #b0e3b8;
+}
+#logout-btn {
+  float: right;
+  background: #c7e8c9;
+  color: #224422;
+  border: none;
+  border-radius: 3px;
+  padding: .2rem 1rem;
+  cursor: pointer;
+}
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: #224422;
+  font-size: 0.95rem;
+  padding: 1rem 0;
+  background: #e7f8eb;
+  border-top: 1px solid #b0e3b8;
+}
+.visi-misi {
+  background: #e7f8eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 700px) {
+  main {
+    padding: 1rem;
+  }
+  .hero-img {
+    max-height: 120px;
+  }
+}
