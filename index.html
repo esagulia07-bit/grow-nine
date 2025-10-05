@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GrowNine — MIS Persemaian</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <img src="forest-header.jpg" alt="Header Hutan" class="hero-img" />
+    <div class="hero-content">
+      <h1>GrowNine</h1>
+      <p class="motto">Menumbuhkan Masa Depan Bersama</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- About Us -->
+    <section id="about">
+      <h2>Tentang Kami</h2>
+      <p>
+        GrowNine adalah sistem informasi persemaian yang berlokasi di Institut Teknologi Bandung Kampus Jatinangor. Kami menyediakan bibit berkualitas untuk mendukung penghijauan dan reboisasi.
+      </p>
+      <ul>
+        <li><strong>Lokasi:</strong> Institut Teknologi Bandung Kampus Jatinangor</li>
+        <li><strong>No. Telepon:</strong> 085273855379</li>
+      </ul>
+      <div class="visi-misi">
+        <h3>Visi & Misi</h3>
+        <p class="visi">Menjadi pelopor persemaian unggul berbasis inovasi dan keberlanjutan.</p>
+        <p class="misi">Menghasilkan bibit berkualitas, menjaga kelestarian lingkungan, dan melayani kebutuhan reboisasi nasional.</p>
+      </div>
+    </section>
+
+    <!-- Daftar Produk -->
+    <section id="produk">
+      <h2>Produk Bibit</h2>
+      <div id="daftar-produk"></div>
+    </section>
+
+    <!-- Keranjang & Checkout -->
+    <section id="keranjang">
+      <h2>Keranjang</h2>
+      <div id="cart-list"></div>
+      <form id="checkout-form">
+        <h3>Checkout Pesanan</h3>
+        <input type="text" placeholder="Nama" name="nama" required>
+        <input type="text" placeholder="No. Telepon" name="telepon" required>
+        <textarea placeholder="Alamat" name="alamat" required></textarea>
+        <button type="submit">Checkout</button>
+      </form>
+      <div id="checkout-message"></div>
+    </section>
+
+    <!-- Login Admin/Pegawai -->
+    <section id="admin-login">
+      <h2>Login Pegawai</h2>
+      <form id="login-form">
+        <input type="text" placeholder="Username" name="username" required>
+        <input type="password" placeholder="Password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div id="login-message"></div>
+    </section>
+
+    <!-- Panel Admin -->
+    <section id="admin-panel" style="display:none">
+      <h2>Panel Pegawai</h2>
+      <button id="logout-btn">Logout</button>
+      <h3>Update Stok Bibit</h3>
+      <div id="update-stok"></div>
+
+      <h3>Quality Control Bibit</h3>
+      <div id="quality-control"></div>
+
+      <h3>Jadwal Maintenance</h3>
+      <ul id="jadwal-maintenance">
+        <li>Penyiraman: Setiap Hari</li>
+        <li>Pemberian pupuk: Setiap Sabtu</li>
+        <li>Pengecekan hama: Setiap Senin & Kamis</li>
+      </ul>
+      <!-- Edit jadwal langsung di HTML di atas jika ingin mengubah -->
+
+      <h3>Distribusi Bibit</h3>
+      <ul id="distribusi-bibit">
+        <li>Perkecambahan</li>
+        <li>Aktimalisasi</li>
+        <li>Siap Dijual</li>
+      </ul>
+      <!-- Edit distribusi langsung di HTML di atas jika ingin mengubah -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GrowNine Persemaian</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
