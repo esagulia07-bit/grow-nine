@@ -255,3 +255,39 @@ document.getElementById('logout-btn').onclick = function() {
 renderProduk();
 renderCart();
 hideAdminPanel();
+
+// === Tambahkan di bagian akhir file script.js ===
+
+// Buat elemen section
+const partnershipSection = document.createElement("section");
+partnershipSection.id = "partnership";
+
+// Judul section
+const title = document.createElement("h2");
+title.textContent = "Partnership";
+
+// Deskripsi
+const desc = document.createElement("p");
+desc.textContent = "Persemaian ini dikembangkan melalui kerja sama:";
+
+// Daftar partner
+const list = document.createElement("ul");
+const partners = [
+  "Program Studi Rekayasa Kehutanan - ITB",
+  "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)",
+  "Perum Perhutani"
+];
+
+partners.forEach(partner => {
+  const li = document.createElement("li");
+  li.textContent = partner;
+  list.appendChild(li);
+});
+
+// Gabungkan elemen
+partnershipSection.appendChild(title);
+partnershipSection.appendChild(desc);
+partnershipSection.appendChild(list);
+
+// Tambahkan ke akhir body
+document.body.appendChild(partnershipSection);
