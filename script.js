@@ -278,15 +278,15 @@ container.classList.add("partners");
 const partners = [
   {
     name: "Program Studi Rekayasa Kehutanan - ITB",
-    logo: "img/itb.png"
+    logo: "itb.png"
   },
   {
     name: "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)",
-    logo: "img/klhk.png"
+    logo: "klhk.png"
   },
   {
     name: "Perum Perhutani",
-    logo: "img/perhutani.png"
+    logo: "perhutani.png"
   }
 ];
 
