@@ -256,7 +256,7 @@ renderProduk();
 renderCart();
 hideAdminPanel();
 
-// === Tambahkan di bagian akhir file script.js ===
+// === BAGIAN PARTNERSHIP ===
 
 // Buat elemen section
 const partnershipSection = document.createElement("section");
@@ -268,26 +268,50 @@ title.textContent = "Partnership";
 
 // Deskripsi
 const desc = document.createElement("p");
-desc.textContent = "Persemaian ini dikembangkan melalui kerja sama:";
+desc.textContent = "Persemaian ini dikembangkan melalui kerja sama dengan beberapa pihak:";
 
-// Daftar partner
-const list = document.createElement("ul");
+// Kontainer logo + nama partner
+const container = document.createElement("div");
+container.classList.add("partners");
+
+// Daftar partner dengan logo
 const partners = [
-  "Program Studi Rekayasa Kehutanan - ITB",
-  "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)",
-  "Perum Perhutani"
+  {
+    name: "Program Studi Rekayasa Kehutanan - ITB",
+    logo: "img/itb.png"
+  },
+  {
+    name: "Kementerian Lingkungan Hidup dan Kehutanan (KLHK)",
+    logo: "img/klhk.png"
+  },
+  {
+    name: "Perum Perhutani",
+    logo: "img/perhutani.png"
+  }
 ];
 
+// Tambahkan setiap partner ke kontainer
 partners.forEach(partner => {
-  const li = document.createElement("li");
-  li.textContent = partner;
-  list.appendChild(li);
+  const card = document.createElement("div");
+  card.classList.add("partner-card");
+
+  const img = document.createElement("img");
+  img.src = partner.logo;
+  img.alt = partner.name;
+  img.classList.add("partner-logo");
+
+  const name = document.createElement("p");
+  name.textContent = partner.name;
+
+  card.appendChild(img);
+  card.appendChild(name);
+  container.appendChild(card);
 });
 
-// Gabungkan elemen
+// Gabungkan semua elemen
 partnershipSection.appendChild(title);
 partnershipSection.appendChild(desc);
-partnershipSection.appendChild(list);
+partnershipSection.appendChild(container);
 
 // Tambahkan ke akhir body
 document.body.appendChild(partnershipSection);
