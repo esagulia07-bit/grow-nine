@@ -291,3 +291,48 @@ partnershipSection.appendChild(list);
 
 // Tambahkan ke akhir body
 document.body.appendChild(partnershipSection);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const list = document.getElementById("testimonial-list");
+  const textInput = document.getElementById("testimonial-text");
+  const nameInput = document.getElementById("testimonial-name");
+  const addBtn = document.getElementById("add-testimonial");
+
+  // Ambil testimoni tambahan dari localStorage
+  const savedTestimonials = JSON.parse(localStorage.getItem("extraTestimonials")) || [];
+
+  // Tampilkan testimoni tambahan
+  savedTestimonials.forEach(t => addTestimonialToDOM(t.text, t.name));
+
+  // Saat tombol ditekan
+  addBtn.addEventListener("click", () => {
+    const text = textInput.value.trim();
+    const name = nameInput.value.trim();
+
+    if (!text || !name) {
+      alert("Isi nama dan testimoni dulu ya!");
+      return;
+    }
+
+    // Simpan ke localStorage
+    savedTestimonials.push({ text, name });
+    localStorage.setItem("extraTestimonials", JSON.stringify(savedTestimonials));
+
+    // Tambahkan ke halaman
+    addTestimonialToDOM(text, name);
+
+    textInput.value = "";
+    nameInput.value = "";
+  });
+
+  // Fungsi untuk menambahkan testimoni baru ke DOM
+  function addTestimonialToDOM(text, name) {
+    const div = document.createElement("div");
+    div.className = "testimonial-item";
+    div.innerHTML = `
+      <p class="testimonial-text">"${text}"</p>
+      <p class="testimonial-author">— ${name}</p>
+    `;
+    list.appendChild(div);
+  }
+});
